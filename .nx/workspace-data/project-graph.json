@@ -7633,7 +7633,27 @@
       },
       {
         "source": "backend",
+        "target": "npm:passport",
+        "type": "static"
+      },
+      {
+        "source": "backend",
+        "target": "npm:express-session",
+        "type": "static"
+      },
+      {
+        "source": "backend",
+        "target": "npm:connect-mongodb-session",
+        "type": "static"
+      },
+      {
+        "source": "backend",
         "target": "npm:@apollo/server",
+        "type": "static"
+      },
+      {
+        "source": "backend",
+        "target": "npm:graphql-passport",
         "type": "static"
       },
       {

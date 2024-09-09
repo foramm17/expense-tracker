@@ -103,108 +103,6 @@
           "hash": "14954872453723519891"
         }
       ],
-      "backend": [
-        {
-          "file": "apps/backend/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/backend/jest.config.ts",
-          "hash": "11798160421691297644"
-        },
-        {
-          "file": "apps/backend/project.json",
-          "hash": "9895078102090813345"
-        },
-        {
-          "file": "apps/backend/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/backend/src/db/connectDB.js",
-          "hash": "8366228820784824891",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/dummyData/data.js",
-          "hash": "13161578898348364476"
-        },
-        {
-          "file": "apps/backend/src/index.js",
-          "hash": "1114441065519377854",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:@apollo/server"
-          ]
-        },
-        {
-          "file": "apps/backend/src/main.ts",
-          "hash": "12003555863464044675",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/backend/src/models/transaction.model.js",
-          "hash": "18430119956314147527",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/models/user.model.js",
-          "hash": "5814149081798832393",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/resolvers/index.js",
-          "hash": "13826602697585173125",
-          "deps": [
-            "npm:@graphql-tools/merge"
-          ]
-        },
-        {
-          "file": "apps/backend/src/resolvers/transaction.resolver.js",
-          "hash": "10074801204663691389"
-        },
-        {
-          "file": "apps/backend/src/resolvers/user.resolver.js",
-          "hash": "13543728783483484111"
-        },
-        {
-          "file": "apps/backend/src/typeDefs/index.js",
-          "hash": "15652775856216034937",
-          "deps": [
-            "npm:@graphql-tools/merge"
-          ]
-        },
-        {
-          "file": "apps/backend/src/typeDefs/transaction.typeDef.js",
-          "hash": "16005052647313596568"
-        },
-        {
-          "file": "apps/backend/src/typeDefs/user.typeDef.js",
-          "hash": "5407353234306744603"
-        },
-        {
-          "file": "apps/backend/tsconfig.app.json",
-          "hash": "1558509971940032459"
-        },
-        {
-          "file": "apps/backend/tsconfig.json",
-          "hash": "3490524966360018312"
-        },
-        {
-          "file": "apps/backend/tsconfig.spec.json",
-          "hash": "11550347367511341917"
-        }
-      ],
       "expense-tracker": [
         {
           "file": ".eslintignore",
@@ -296,6 +194,112 @@
         {
           "file": "tsconfig.base.json",
           "hash": "16936441711144470533"
+        }
+      ],
+      "backend": [
+        {
+          "file": "apps/backend/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/backend/jest.config.ts",
+          "hash": "11798160421691297644"
+        },
+        {
+          "file": "apps/backend/project.json",
+          "hash": "9895078102090813345"
+        },
+        {
+          "file": "apps/backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/db/connectDB.js",
+          "hash": "8366228820784824891",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/dummyData/data.js",
+          "hash": "13161578898348364476"
+        },
+        {
+          "file": "apps/backend/src/index.js",
+          "hash": "14194429013752989737",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:passport",
+            "npm:express-session",
+            "npm:connect-mongodb-session",
+            "npm:@apollo/server",
+            "npm:graphql-passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/main.ts",
+          "hash": "12003555863464044675",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/transaction.model.js",
+          "hash": "18430119956314147527",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/user.model.js",
+          "hash": "5814149081798832393",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/index.js",
+          "hash": "13826602697585173125",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/transaction.resolver.js",
+          "hash": "10074801204663691389"
+        },
+        {
+          "file": "apps/backend/src/resolvers/user.resolver.js",
+          "hash": "13543728783483484111"
+        },
+        {
+          "file": "apps/backend/src/typeDefs/index.js",
+          "hash": "15652775856216034937",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/typeDefs/transaction.typeDef.js",
+          "hash": "16005052647313596568"
+        },
+        {
+          "file": "apps/backend/src/typeDefs/user.typeDef.js",
+          "hash": "5407353234306744603"
+        },
+        {
+          "file": "apps/backend/tsconfig.app.json",
+          "hash": "1558509971940032459"
+        },
+        {
+          "file": "apps/backend/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/backend/tsconfig.spec.json",
+          "hash": "11550347367511341917"
         }
       ]
     },
