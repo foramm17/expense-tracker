@@ -1,0 +1,304 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.6.5",
+  "deps": {
+    "@apollo/server": "^4.11.0",
+    "@graphql-tools/merge": "^9.0.7",
+    "axios": "^1.6.0",
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "graphql": "^16.9.0",
+    "graphql-passport": "^0.6.8",
+    "mongoose": "^8.6.1",
+    "passport": "^0.7.0",
+    "tslib": "^2.3.0",
+    "@nrwl/node": "^19.6.5",
+    "@nx/esbuild": "19.6.5",
+    "@nx/eslint": "19.6.5",
+    "@nx/eslint-plugin": "19.6.5",
+    "@nx/jest": "19.6.5",
+    "@nx/js": "19.6.5",
+    "@nx/node": "19.6.5",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@types/express": "~4.17.13",
+    "@types/jest": "^29.5.12",
+    "@types/node": "~18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "esbuild": "^0.19.2",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "nx": "19.6.5",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.5.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "name": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
+  ],
+  "fileMap": {
+    "projectFileMap": {
+      "backend-e2e": [
+        {
+          "file": "apps/backend-e2e/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/backend-e2e/jest.config.ts",
+          "hash": "7227169307692830278"
+        },
+        {
+          "file": "apps/backend-e2e/project.json",
+          "hash": "18395645934347403237"
+        },
+        {
+          "file": "apps/backend-e2e/src/backend/backend.spec.ts",
+          "hash": "4579662685003779048",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/src/support/global-setup.ts",
+          "hash": "2568409276037275290"
+        },
+        {
+          "file": "apps/backend-e2e/src/support/global-teardown.ts",
+          "hash": "5275447082211835490"
+        },
+        {
+          "file": "apps/backend-e2e/src/support/test-setup.ts",
+          "hash": "10984585515912236441",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/tsconfig.json",
+          "hash": "15443990093475294480"
+        },
+        {
+          "file": "apps/backend-e2e/tsconfig.spec.json",
+          "hash": "14954872453723519891"
+        }
+      ],
+      "backend": [
+        {
+          "file": "apps/backend/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/backend/jest.config.ts",
+          "hash": "11798160421691297644"
+        },
+        {
+          "file": "apps/backend/project.json",
+          "hash": "9895078102090813345"
+        },
+        {
+          "file": "apps/backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/db/connectDB.js",
+          "hash": "8366228820784824891",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/dummyData/data.js",
+          "hash": "13161578898348364476"
+        },
+        {
+          "file": "apps/backend/src/index.js",
+          "hash": "1114441065519377854",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:@apollo/server"
+          ]
+        },
+        {
+          "file": "apps/backend/src/main.ts",
+          "hash": "12003555863464044675",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/transaction.model.js",
+          "hash": "18430119956314147527",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/user.model.js",
+          "hash": "5814149081798832393",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/index.js",
+          "hash": "13826602697585173125",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/transaction.resolver.js",
+          "hash": "10074801204663691389"
+        },
+        {
+          "file": "apps/backend/src/resolvers/user.resolver.js",
+          "hash": "13543728783483484111"
+        },
+        {
+          "file": "apps/backend/src/typeDefs/index.js",
+          "hash": "15652775856216034937",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/typeDefs/transaction.typeDef.js",
+          "hash": "16005052647313596568"
+        },
+        {
+          "file": "apps/backend/src/typeDefs/user.typeDef.js",
+          "hash": "5407353234306744603"
+        },
+        {
+          "file": "apps/backend/tsconfig.app.json",
+          "hash": "1558509971940032459"
+        },
+        {
+          "file": "apps/backend/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/backend/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "expense-tracker": [
+        {
+          "file": ".eslintignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "18315524891129148814"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "2836708013400663046"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "14688272390704683536"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "3494843969422251966",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "jest.preset.cjs",
+          "hash": "9430166341120122740",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "11017606813396984211"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "14264143183341815841"
+        },
+        {
+          "file": "package.json",
+          "hash": "12317429687510341168",
+          "deps": [
+            "npm:@nrwl/node",
+            "npm:@nx/esbuild",
+            "npm:@nx/eslint",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/jest",
+            "npm:@nx/js",
+            "npm:@nx/node",
+            "npm:@swc-node/register",
+            "npm:@swc/core",
+            "npm:@swc/helpers",
+            "npm:@types/express",
+            "npm:@types/jest",
+            "npm:@types/node",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:esbuild",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:jest",
+            "npm:jest-environment-node",
+            "npm:nodemon",
+            "npm:nx",
+            "npm:prettier",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:@apollo/server",
+            "npm:@graphql-tools/merge",
+            "npm:axios",
+            "npm:bcryptjs",
+            "npm:connect-mongodb-session",
+            "npm:dotenv",
+            "npm:express",
+            "npm:express-session",
+            "npm:graphql",
+            "npm:graphql-passport",
+            "npm:mongoose",
+            "npm:passport",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "16936441711144470533"
+        }
+      ]
+    },
+    "nonProjectFiles": []
+  }
+}
