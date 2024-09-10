@@ -7658,6 +7658,11 @@
       },
       {
         "source": "backend",
+        "target": "npm:bcryptjs",
+        "type": "static"
+      },
+      {
+        "source": "backend",
         "target": "npm:@graphql-tools/merge",
         "type": "static"
       }
