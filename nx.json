@@ -5,7 +5,10 @@
     "@nx/esbuild:esbuild": {
       "cache": true,
       "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
+      "inputs": ["default", "^default"],
+      "options": {
+        "format": ["esm"]
+      }
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
@@ -21,7 +24,8 @@
     {
       "plugin": "@nx/jest/plugin",
       "options": {
-        "targetName": "test"
+        "targetName": "test",
+        "jestConfig": "jest.preset.cjs"
       },
       "exclude": ["apps/backend-e2e/**/*"]
     },

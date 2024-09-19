@@ -11,18 +11,19 @@
       "options": {
         "platform": "node",
         "outputPath": "dist/apps/backend",
-        "format": ["cjs"],
-        "bundle": false,
+        "format": ["esm"],
+        "bundle": true,
         "main": "apps/backend/src/index.js",
-        "tsConfig": "apps/backend/tsconfig.app.json",
+        "tsConfig": "apps/backend/tsconfig.json",
         "assets": ["apps/backend/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
-          "sourcemap": true,
-          "outExtension": {
-            ".js": ".js"
-          }
-        }
+      "sourcemap": true,
+      "outExtension": {
+        ".js": ".js"
+      },
+      "external": ["@apollo/server"]
+    }
       },
       "configurations": {
         "development": {},

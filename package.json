@@ -8,6 +8,9 @@
     "build": "nx build backend"
   },
   "type": "module",
+  "jest": {
+    "preset": "./jest.preset.cjs"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'backend-e2e',
   preset: '../../jest.preset.cjs',
   globalSetup: '<rootDir>/src/support/global-setup.ts',
