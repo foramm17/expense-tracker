@@ -13994,6 +13994,11 @@
       },
       {
         "source": "frontend",
+        "target": "npm:react-hot-toast",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
         "target": "npm:react-icons",
         "type": "static"
       },
@@ -14504,6 +14509,11 @@
       {
         "source": "expense-tracker",
         "target": "npm:tslib",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:cors",
         "type": "static"
       }
     ],

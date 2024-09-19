@@ -45,7 +45,7 @@ var user_model_default = User;
 // apps/backend/src/resolvers/user.resolver.js
 import bcrypt from "bcryptjs";
 var userResolver = {
-  Mutations: {
+  Mutation: {
     signUp: async (_, { input }, context) => {
       try {
         const { username, name, password, gender } = input;
@@ -259,15 +259,15 @@ var userTypeDef = `#graphql
     user(userId:ID!): User
   }
 
-  type Mutations {
+  type Mutation {
     signUp(input: SignUpInput!): User
     login(input: LoginInput!): User
     logout: LogoutResponse
   }
 
   input SignUpInput {
-    username: String!
     name: String!
+    username: String!
     password: String!
     gender: String!
   }
