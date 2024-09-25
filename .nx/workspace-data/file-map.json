@@ -11,6 +11,7 @@
     "chart.js": "^4.4.4",
     "clsx": "^2.1.1",
     "connect-mongodb-session": "^5.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
@@ -169,11 +170,11 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "16635644029431911000"
+          "hash": "7543806718802501993"
         },
         {
           "file": "package.json",
-          "hash": "12399010537545298582",
+          "hash": "13683630814514223582",
           "deps": [
             "npm:@nrwl/node",
             "npm:@nrwl/react",
@@ -235,6 +236,7 @@
             "npm:chart.js",
             "npm:clsx",
             "npm:connect-mongodb-session",
+            "npm:cors",
             "npm:dotenv",
             "npm:express",
             "npm:express-session",
@@ -262,229 +264,6 @@
         {
           "file": "tmp/apps/backend/dev/tsconfig.generated.json",
           "hash": "13306392108264393979"
-        },
-        {
-          "file": "dist/apps/backend/package-lock.json",
-          "hash": "11384044173739825242"
-        },
-        {
-          "file": "dist/apps/backend/index.js",
-          "hash": "16581532156564463372",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:passport",
-            "npm:express-session",
-            "npm:connect-mongodb-session",
-            "npm:@apollo/server",
-            "npm:graphql-passport",
-            "npm:@graphql-tools/merge",
-            "npm:mongoose",
-            "npm:bcryptjs"
-          ]
-        }
-      ],
-      "frontend": [
-        {
-          "file": "apps/frontend/.eslintrc.json",
-          "hash": "10575948854785863314"
-        },
-        {
-          "file": "apps/frontend/index.html",
-          "hash": "11286305522214875173"
-        },
-        {
-          "file": "apps/frontend/jest.config.cjs",
-          "hash": "16574544507722635338"
-        },
-        {
-          "file": "apps/frontend/postcss.config.js",
-          "hash": "1886002347757770194"
-        },
-        {
-          "file": "apps/frontend/project.json",
-          "hash": "1581687993160957088"
-        },
-        {
-          "file": "apps/frontend/public/404.svg",
-          "hash": "2791364094500809854"
-        },
-        {
-          "file": "apps/frontend/src/App.jsx",
-          "hash": "5842592383092291594",
-          "deps": [
-            "npm:react-router-dom",
-            "npm:@apollo/client",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/components/Card.jsx",
-          "hash": "17145147448232375601",
-          "deps": [
-            "npm:react-icons",
-            "npm:react-router-dom",
-            "npm:react-hot-toast",
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/components/Cards.jsx",
-          "hash": "186806699348865099",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/components/InputField.jsx",
-          "hash": "8695237230340460101"
-        },
-        {
-          "file": "apps/frontend/src/components/RadioButton.jsx",
-          "hash": "1164339568847022928"
-        },
-        {
-          "file": "apps/frontend/src/components/TransactionForm.jsx",
-          "hash": "3821691524097494416",
-          "deps": [
-            "npm:@apollo/client",
-            "npm:react",
-            "npm:react-hook-form",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/components/skeletons/TransactionFormSkeleton.jsx",
-          "hash": "14962047916714052523"
-        },
-        {
-          "file": "apps/frontend/src/components/ui/GridBackground.jsx",
-          "hash": "541802846472528960"
-        },
-        {
-          "file": "apps/frontend/src/components/ui/Header.jsx",
-          "hash": "6533347036938322652",
-          "deps": [
-            "npm:react-router-dom"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/graphql/mutations/transaction.mutation.js",
-          "hash": "4674273071636761296",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/graphql/mutations/user.mutation.js",
-          "hash": "13063383134065210591",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/graphql/queries/transaction.query.js",
-          "hash": "2193282925019256761",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/graphql/queries/user.query.js",
-          "hash": "12700968342569488063",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/index.css",
-          "hash": "2172668849966456987"
-        },
-        {
-          "file": "apps/frontend/src/main.jsx",
-          "hash": "1539312328390037820",
-          "deps": [
-            "npm:react",
-            "npm:react-dom",
-            "npm:react-router-dom",
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/pages/HomePage.jsx",
-          "hash": "16029076554792236054",
-          "deps": [
-            "npm:react-chartjs-2",
-            "npm:chart.js",
-            "npm:@apollo/client",
-            "npm:react-icons",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/pages/LoginPage.jsx",
-          "hash": "10750891329025630178",
-          "deps": [
-            "npm:react-router-dom",
-            "npm:react-hook-form",
-            "npm:@apollo/client",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/pages/NotFoundPage.jsx",
-          "hash": "17030531925235605491"
-        },
-        {
-          "file": "apps/frontend/src/pages/SignUpPage.jsx",
-          "hash": "11169346270880562611",
-          "deps": [
-            "npm:react-hook-form",
-            "npm:react-router-dom",
-            "npm:@apollo/client",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/pages/TransactionPage.jsx",
-          "hash": "11153770140145021833",
-          "deps": [
-            "npm:react",
-            "npm:react-hook-form",
-            "npm:react-router-dom",
-            "npm:@apollo/client",
-            "npm:react-hot-toast"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/utils/cn.js",
-          "hash": "8123393101570189364",
-          "deps": [
-            "npm:clsx",
-            "npm:tailwind-merge"
-          ]
-        },
-        {
-          "file": "apps/frontend/src/utils/formatDate.js",
-          "hash": "11658868955873442538"
-        },
-        {
-          "file": "apps/frontend/tailwind.config.js",
-          "hash": "13518657443063852973",
-          "deps": [
-            "npm:mini-svg-data-uri",
-            "npm:tailwindcss"
-          ]
-        },
-        {
-          "file": "apps/frontend/vite.config.js",
-          "hash": "3433569499239564149",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react",
-            "npm:@nx/vite"
-          ]
         }
       ],
       "frontend-e2e": [
@@ -654,11 +433,11 @@
         },
         {
           "file": "apps/backend/src/resolvers/transaction.resolver.js",
-          "hash": "931805018129920846"
+          "hash": "18305748825438363874"
         },
         {
           "file": "apps/backend/src/resolvers/user.resolver.js",
-          "hash": "12802716703729383105",
+          "hash": "9933190993551347905",
           "deps": [
             "npm:bcryptjs"
           ]
@@ -676,7 +455,7 @@
         },
         {
           "file": "apps/backend/src/typeDefs/user.typeDef.js",
-          "hash": "10009970916649759977"
+          "hash": "16102357554403527336"
         },
         {
           "file": "apps/backend/tsconfig.app.json",
@@ -689,6 +468,209 @@
         {
           "file": "apps/backend/tsconfig.spec.json",
           "hash": "18403016037660081132"
+        }
+      ],
+      "frontend": [
+        {
+          "file": "apps/frontend/.eslintrc.json",
+          "hash": "10575948854785863314"
+        },
+        {
+          "file": "apps/frontend/index.html",
+          "hash": "11286305522214875173"
+        },
+        {
+          "file": "apps/frontend/jest.config.cjs",
+          "hash": "16574544507722635338"
+        },
+        {
+          "file": "apps/frontend/postcss.config.js",
+          "hash": "1886002347757770194"
+        },
+        {
+          "file": "apps/frontend/project.json",
+          "hash": "1581687993160957088"
+        },
+        {
+          "file": "apps/frontend/public/404.svg",
+          "hash": "2791364094500809854"
+        },
+        {
+          "file": "apps/frontend/src/App.jsx",
+          "hash": "5842592383092291594",
+          "deps": [
+            "npm:react-router-dom",
+            "npm:@apollo/client",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/Card.jsx",
+          "hash": "18401480049162605019",
+          "deps": [
+            "npm:react-icons",
+            "npm:react-router-dom",
+            "npm:react-hot-toast",
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/Cards.jsx",
+          "hash": "11087137270226976370",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/InputField.jsx",
+          "hash": "8695237230340460101"
+        },
+        {
+          "file": "apps/frontend/src/components/RadioButton.jsx",
+          "hash": "1164339568847022928"
+        },
+        {
+          "file": "apps/frontend/src/components/TransactionForm.jsx",
+          "hash": "1966394652906670316",
+          "deps": [
+            "npm:@apollo/client",
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/skeletons/TransactionFormSkeleton.jsx",
+          "hash": "14962047916714052523"
+        },
+        {
+          "file": "apps/frontend/src/components/ui/GridBackground.jsx",
+          "hash": "541802846472528960"
+        },
+        {
+          "file": "apps/frontend/src/components/ui/Header.jsx",
+          "hash": "3017006460028196782",
+          "deps": [
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/graphql/mutations/transaction.mutation.js",
+          "hash": "4674273071636761296",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/graphql/mutations/user.mutation.js",
+          "hash": "13063383134065210591",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/graphql/queries/transaction.query.js",
+          "hash": "1110230145126866730",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/graphql/queries/user.query.js",
+          "hash": "2165687295826831255",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/index.css",
+          "hash": "2172668849966456987"
+        },
+        {
+          "file": "apps/frontend/src/main.jsx",
+          "hash": "1539312328390037820",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom",
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/pages/HomePage.jsx",
+          "hash": "12130675208268888009",
+          "deps": [
+            "npm:react-chartjs-2",
+            "npm:chart.js",
+            "npm:@apollo/client",
+            "npm:react-icons",
+            "npm:react-hot-toast",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/pages/LoginPage.jsx",
+          "hash": "10750891329025630178",
+          "deps": [
+            "npm:react-router-dom",
+            "npm:react-hook-form",
+            "npm:@apollo/client",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/pages/NotFoundPage.jsx",
+          "hash": "17030531925235605491"
+        },
+        {
+          "file": "apps/frontend/src/pages/SignUpPage.jsx",
+          "hash": "11169346270880562611",
+          "deps": [
+            "npm:react-hook-form",
+            "npm:react-router-dom",
+            "npm:@apollo/client",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/pages/TransactionPage.jsx",
+          "hash": "17024709892724053375",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:react-router-dom",
+            "npm:@apollo/client",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/utils/cn.js",
+          "hash": "8123393101570189364",
+          "deps": [
+            "npm:clsx",
+            "npm:tailwind-merge"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/utils/formatDate.js",
+          "hash": "11658868955873442538"
+        },
+        {
+          "file": "apps/frontend/tailwind.config.js",
+          "hash": "13518657443063852973",
+          "deps": [
+            "npm:mini-svg-data-uri",
+            "npm:tailwindcss"
+          ]
+        },
+        {
+          "file": "apps/frontend/vite.config.js",
+          "hash": "3433569499239564149",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:@nx/vite"
+          ]
         }
       ]
     }

@@ -14,9 +14,47 @@ import { buildContext } from "graphql-passport";
 // apps/backend/src/resolvers/index.js
 import { mergeResolvers } from "@graphql-tools/merge";
 
-// apps/backend/src/models/user.model.js
+// apps/backend/src/models/transaction.model.js
 import mongoose from "mongoose";
-var userSchema = new mongoose.Schema({
+var transactionSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  paymentType: {
+    type: String,
+    enum: ["cash", "card"],
+    required: true
+  },
+  category: {
+    type: String,
+    enum: ["saving", "expense", "investment"],
+    required: true
+  },
+  amount: {
+    type: Number,
+    required: true
+  },
+  location: {
+    type: String,
+    default: "Unknown"
+  },
+  date: {
+    type: Date,
+    required: true
+  }
+});
+var Transaction = mongoose.model("Transaction", transactionSchema);
+var transaction_model_default = Transaction;
+
+// apps/backend/src/models/user.model.js
+import mongoose2 from "mongoose";
+var userSchema = new mongoose2.Schema({
   username: {
     type: String,
     required: true,
@@ -39,7 +77,7 @@ var userSchema = new mongoose.Schema({
     enum: ["male", "female"]
   }
 }, { timestamps: true });
-var User = mongoose.model("User", userSchema);
+var User = mongoose2.model("User", userSchema);
 var user_model_default = User;
 
 // apps/backend/src/resolvers/user.resolver.js
@@ -125,47 +163,20 @@ var userResolver = {
         throw new Error(err.message || "Error getting user");
       }
     }
+  },
+  User: {
+    transactions: async (parent) => {
+      try {
+        const transactions = await transaction_model_default.find({ userId: parent._id });
+        return transactions;
+      } catch (err) {
+        console.log("Error in user.transactions resolver: ", err);
+        throw new Error(err.message || "Internal server error");
+      }
+    }
   }
 };
 var user_resolver_default = userResolver;
-
-// apps/backend/src/models/transaction.model.js
-import mongoose2 from "mongoose";
-var transactionSchema = new mongoose2.Schema({
-  userId: {
-    type: mongoose2.Schema.Types.ObjectId,
-    ref: "User",
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  paymentType: {
-    type: String,
-    enum: ["cash", "card"],
-    required: true
-  },
-  category: {
-    type: String,
-    enum: ["saving", "expense", "investment"],
-    required: true
-  },
-  amount: {
-    type: Number,
-    required: true
-  },
-  location: {
-    type: String,
-    default: "Unknown"
-  },
-  date: {
-    type: Date,
-    required: true
-  }
-});
-var Transaction = mongoose2.model("Transaction", transactionSchema);
-var transaction_model_default = Transaction;
 
 // apps/backend/src/resolvers/transaction.resolver.js
 var transactionResolver = {
@@ -190,6 +201,23 @@ var transactionResolver = {
         console.error("Error getting transaction:", err);
         throw new Error("Error getting transaction");
       }
+    },
+    categoryStatistics: async (_, __, context) => {
+      if (!context.getUser())
+        throw new Error("Unauthorized");
+      const userId = context.getUser()._id;
+      const transactions = await transaction_model_default.find({ userId });
+      const categoryMap = {};
+      transactions.forEach((transaction) => {
+        if (!categoryMap[transaction.category]) {
+          categoryMap[transaction.category] = 0;
+        }
+        categoryMap[transaction.category] += transaction.amount;
+      });
+      return Object.entries(categoryMap).map(([category, totalAmount]) => ({
+        category,
+        totalAmount
+      }));
     }
   },
   Mutation: {
@@ -232,6 +260,18 @@ var transactionResolver = {
         throw new Error("Error deleting transaction");
       }
     }
+  },
+  Transaction: {
+    user: async (parent) => {
+      const userId = parent.userId;
+      try {
+        const user = await user_model_default.findById(userId);
+        return user;
+      } catch (err) {
+        console.error("Error getting user:", err);
+        throw new Error("Error getting user");
+      }
+    }
   }
 };
 var transaction_resolver_default = transactionResolver;
@@ -252,6 +292,7 @@ var userTypeDef = `#graphql
     password: String!
     profilePicture: String
     gender: String!
+    transactions: [Transaction!]
   }
 
   type Query {

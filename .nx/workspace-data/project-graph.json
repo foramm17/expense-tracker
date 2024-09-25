@@ -14423,6 +14423,11 @@
       },
       {
         "source": "expense-tracker",
+        "target": "npm:cors",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
         "target": "npm:dotenv",
         "type": "static"
       },
@@ -14509,11 +14514,6 @@
       {
         "source": "expense-tracker",
         "target": "npm:tslib",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:cors",
         "type": "static"
       }
     ],

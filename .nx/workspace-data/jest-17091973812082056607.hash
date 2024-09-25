@@ -1,5 +1,5 @@
 {
-  "9275032877023433878": {
+  "8416045597780187449": {
     "targets": {
       "test": {
         "command": "jest",
@@ -37,83 +37,7 @@
       }
     }
   },
-  "1600500418304380164": {
-    "targets": {
-      "test": {
-        "command": "jest",
-        "options": {
-          "cwd": "apps/frontend"
-        },
-        "metadata": {
-          "technologies": [
-            "jest"
-          ],
-          "description": "Run Jest Tests",
-          "help": {
-            "command": "npx jest --help",
-            "example": {
-              "options": {
-                "coverage": true
-              }
-            }
-          }
-        },
-        "cache": true,
-        "inputs": [
-          "default",
-          "^default",
-          "{workspaceRoot}/jest.preset.cjs",
-          {
-            "externalDependencies": [
-              "jest"
-            ]
-          }
-        ],
-        "outputs": [
-          "{workspaceRoot}/coverage/apps/frontend"
-        ]
-      }
-    }
-  },
-  "5987828085908230422": {
-    "targets": {
-      "test": {
-        "command": "jest",
-        "options": {
-          "cwd": "apps/frontend"
-        },
-        "metadata": {
-          "technologies": [
-            "jest"
-          ],
-          "description": "Run Jest Tests",
-          "help": {
-            "command": "npx jest --help",
-            "example": {
-              "options": {
-                "coverage": true
-              }
-            }
-          }
-        },
-        "cache": true,
-        "inputs": [
-          "default",
-          "^default",
-          "{workspaceRoot}/jest.preset.cjs",
-          {
-            "externalDependencies": [
-              "jest"
-            ]
-          }
-        ],
-        "outputs": [
-          "{workspaceRoot}/coverage/apps/frontend"
-        ]
-      }
-    }
-  },
-  "15456232238566902583": {
+  "7671923401233165500": {
     "targets": {
       "test": {
         "command": "jest",
