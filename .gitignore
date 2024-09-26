@@ -1,3 +1,6 @@
 node_modules
 .env
 .nx/workspace-data/d/daemon.log
+.nx/cache/
+.nx/workspace-data/
+
