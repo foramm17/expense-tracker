@@ -633,7 +633,7 @@
               "script": "build"
             },
             "metadata": {
-              "scriptContent": "npm install && nx build backend && nx build frontend",
+              "scriptContent": "npm install && nx build backend --skip-nx-cache && nx build frontend --skip-nx-cache",
               "runCommand": "npm run build"
             },
             "configurations": {},

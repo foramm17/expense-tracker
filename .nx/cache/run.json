@@ -1,21 +1,3 @@
-{
-  "run": {
-    "command": "nx build frontend",
-    "startTime": "2024-09-25T20:01:54.568Z",
-    "endTime": "2024-09-25T20:01:54.637Z",
-    "inner": false
-  },
-  "tasks": [
-    {
-      "taskId": "frontend:build",
-      "target": "build",
-      "projectName": "frontend",
-      "hash": "14824611110715191487",
-      "startTime": "2024-09-25T20:01:54.586Z",
-      "endTime": "2024-09-25T20:01:54.624Z",
-      "params": "",
-      "cacheStatus": "local-cache-hit",
-      "status": 0
-    }
-  ]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:47efdf5dcf7d6c0f946ff2eccb1dd5c68f82e398da450a8670915da66cb692b0
+size 491
