@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/apps/backend/index.js",
-    "build": "npx nx build backend && npx nx build frontend",
+    "build": "npm install && nx build backend && nx build frontend",
     "dev": "nx run-many --target=serve --projects=backend,frontend --parallel"
   },
   "type": "module",

@@ -633,7 +633,7 @@
               "script": "build"
             },
             "metadata": {
-              "scriptContent": "npx nx build backend && npx nx build frontend",
+              "scriptContent": "npm install && nx build backend && nx build frontend",
               "runCommand": "npm run build"
             },
             "configurations": {},
