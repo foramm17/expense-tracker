@@ -608,8 +608,8 @@
           "targetGroups": {
             "NPM Scripts": [
               "start",
-              "dev",
-              "build"
+              "build",
+              "dev"
             ]
           },
           "description": ""
@@ -621,20 +621,8 @@
               "script": "start"
             },
             "metadata": {
-              "scriptContent": "nx serve backend",
+              "scriptContent": "node dist/apps/backend/index.js",
               "runCommand": "npm run start"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "dev": {
-            "executor": "nx:run-script",
-            "options": {
-              "script": "dev"
-            },
-            "metadata": {
-              "scriptContent": "nx run backend:dev",
-              "runCommand": "npm run dev"
             },
             "configurations": {},
             "parallelism": true
@@ -645,8 +633,20 @@
               "script": "build"
             },
             "metadata": {
-              "scriptContent": "nx build backend",
+              "scriptContent": "nx build backend && nx build frontend",
               "runCommand": "npm run build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev"
+            },
+            "metadata": {
+              "scriptContent": "nx run-many --target=serve --projects=backend,frontend --parallel",
+              "runCommand": "npm run dev"
             },
             "configurations": {},
             "parallelism": true
@@ -14123,6 +14123,61 @@
     "expense-tracker": [
       {
         "source": "expense-tracker",
+        "target": "npm:express",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:cors",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:dotenv",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:passport",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:express-session",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:connect-mongodb-session",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:@apollo/server",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:graphql-passport",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:@graphql-tools/merge",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:mongoose",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:bcryptjs",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
         "target": "npm:@nx/jest",
         "type": "static"
       },
@@ -14383,27 +14438,12 @@
       },
       {
         "source": "expense-tracker",
-        "target": "npm:@apollo/server",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:@graphql-tools/merge",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
         "target": "npm:@tailwindcss/aspect-ratio",
         "type": "static"
       },
       {
         "source": "expense-tracker",
         "target": "npm:axios",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:bcryptjs",
         "type": "static"
       },
       {
@@ -14418,31 +14458,6 @@
       },
       {
         "source": "expense-tracker",
-        "target": "npm:connect-mongodb-session",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:cors",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:dotenv",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:express",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:express-session",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
         "target": "npm:framer-motion",
         "type": "static"
       },
@@ -14453,22 +14468,7 @@
       },
       {
         "source": "expense-tracker",
-        "target": "npm:graphql-passport",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
         "target": "npm:mini-svg-data-uri",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:mongoose",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:passport",
         "type": "static"
       },
       {

@@ -463,22 +463,23 @@ var server = new ApolloServer({
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })]
 });
 await server.start();
-app.use(express.static(path.join(__dirname, "dist/apps/frontend")));
 app.use(
   "/graphql",
   cors({
-    origin: process.env.NODE_ENV === "production" ? "https://your-render-app-name.onrender.com" : "http://localhost:4000",
+    origin: "http://localhost:3000",
     credentials: true
   }),
   express.json(),
+  // expressMiddleware accepts the same arguments:
+  // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
     context: async ({ req, res }) => buildContext({ req, res })
   })
 );
+app.use(express.static(path.join(__dirname, "dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/apps/frontend/index.html"));
 });
-var PORT = process.env.PORT || 4e3;
-await new Promise((resolve) => httpServer.listen({ port: PORT }, resolve));
+await new Promise((resolve) => httpServer.listen({ port: 4e3 }, resolve));
 await connectDB();
-console.log(`\u{1F680} Server ready at http://localhost:${PORT}`);
+console.log(`\u{1F680} Server ready at http://localhost:4000/graphql`);

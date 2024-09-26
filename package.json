@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nx serve backend",
-    "dev": "nx run backend:dev",
-    "build": "nx build backend"
+    "start": "node dist/apps/backend/index.js",
+    "build": "nx build backend && nx build frontend",
+    "dev": "nx run-many --target=serve --projects=backend,frontend --parallel"
   },
   "type": "module",
   "jest": {
