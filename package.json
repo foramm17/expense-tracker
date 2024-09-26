@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/apps/backend/index.js",
-    "build": "nx build backend && nx build frontend",
+    "build": "npx nx build backend && npx nx build frontend",
     "dev": "nx run-many --target=serve --projects=backend,frontend --parallel"
   },
   "type": "module",
@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@nrwl/node": "^19.6.5",
+    "@nrwl/nx": "^7.8.7",
     "@nrwl/react": "^19.7.3",
     "@nx/cypress": "19.7.3",
     "@nx/esbuild": "19.6.5",
