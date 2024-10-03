@@ -4644,6 +4644,15 @@
         "hash": "sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA=="
       }
     },
+    "npm:@types/luxon": {
+      "type": "npm",
+      "name": "npm:@types/luxon",
+      "data": {
+        "version": "3.4.2",
+        "packageName": "@types/luxon",
+        "hash": "sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA=="
+      }
+    },
     "npm:@types/mime": {
       "type": "npm",
       "name": "npm:@types/mime",
@@ -6840,6 +6849,15 @@
         "hash": "sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ=="
       }
     },
+    "npm:cron": {
+      "type": "npm",
+      "name": "npm:cron",
+      "data": {
+        "version": "3.1.7",
+        "packageName": "cron",
+        "hash": "sha512-tlBg7ARsAMQLzgwqVxy8AZl/qlTc5nibqYwtNGoCrd+cV+ugI+tvZC1oT/8dFH8W455YrywGykx/KMmAqOr7Jw=="
+      }
+    },
     "npm:cron-parser": {
       "type": "npm",
       "name": "npm:cron-parser",
@@ -6847,6 +6865,24 @@
         "version": "4.9.0",
         "packageName": "cron-parser",
         "hash": "sha512-p0SaNjrHOnQeR8/VnfGbmg9te2kfyYSQ7Sc/j/6DtPL3JQvKxmjO9TSjNFpujqV3vEYYBvNNvXSxzyksBWAx1Q=="
+      }
+    },
+    "npm:luxon@3.4.4": {
+      "type": "npm",
+      "name": "npm:luxon@3.4.4",
+      "data": {
+        "version": "3.4.4",
+        "packageName": "luxon",
+        "hash": "sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA=="
+      }
+    },
+    "npm:luxon": {
+      "type": "npm",
+      "name": "npm:luxon",
+      "data": {
+        "version": "3.5.0",
+        "packageName": "luxon",
+        "hash": "sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ=="
       }
     },
     "npm:cross-inspect": {
@@ -10501,15 +10537,6 @@
         "version": "2.0.0",
         "packageName": "lowercase-keys",
         "hash": "sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA=="
-      }
-    },
-    "npm:luxon": {
-      "type": "npm",
-      "name": "npm:luxon",
-      "data": {
-        "version": "3.5.0",
-        "packageName": "luxon",
-        "hash": "sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ=="
       }
     },
     "npm:lz-string": {
@@ -22806,6 +22833,16 @@
     {
       "source": "npm:create-jest",
       "target": "npm:prompts",
+      "type": "static"
+    },
+    {
+      "source": "npm:cron",
+      "target": "npm:@types/luxon",
+      "type": "static"
+    },
+    {
+      "source": "npm:cron",
+      "target": "npm:luxon@3.4.4",
       "type": "static"
     },
     {

@@ -14,9 +14,12 @@ import mergedResolvers from './resolvers/index.js';
 import mergedTypeDefs from './typeDefs/index.js';
 import { connectDB } from './db/connectDB.js';
 import { configurePassport } from './passport/passport.config.js';
+import job from '../cron.js';
 
 dotenv.config();
 configurePassport();
+
+job.start();
 
 const __dirname = path.resolve();
 const app = express();
@@ -65,7 +68,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === 'production'
-        ? 'https://your-render-app-name.onrender.com'
+        ? 'https://expense-chase.onrender.com/'
         : 'http://localhost:3000',
     credentials: true,
   }),

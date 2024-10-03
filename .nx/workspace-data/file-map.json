@@ -12,6 +12,7 @@
     "clsx": "^2.1.1",
     "connect-mongodb-session": "^5.0.0",
     "cors": "^2.8.5",
+    "cron": "^3.1.7",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
@@ -122,300 +123,6 @@
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
-      "backend": [
-        {
-          "file": "apps/backend/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/backend/jest.config.cjs",
-          "hash": "9081822225419753379"
-        },
-        {
-          "file": "apps/backend/project.json",
-          "hash": "3003762641399757820"
-        },
-        {
-          "file": "apps/backend/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/backend/src/db/connectDB.js",
-          "hash": "8366228820784824891",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/index.js",
-          "hash": "6739011125279618658",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:passport",
-            "npm:express-session",
-            "npm:connect-mongodb-session",
-            "npm:@apollo/server",
-            "npm:graphql-passport"
-          ]
-        },
-        {
-          "file": "apps/backend/src/models/transaction.model.js",
-          "hash": "18430119956314147527",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/models/user.model.js",
-          "hash": "5814149081798832393",
-          "deps": [
-            "npm:mongoose"
-          ]
-        },
-        {
-          "file": "apps/backend/src/passport/passport.config.js",
-          "hash": "10062503802453402047",
-          "deps": [
-            "npm:passport",
-            "npm:bcryptjs",
-            "npm:graphql-passport"
-          ]
-        },
-        {
-          "file": "apps/backend/src/resolvers/index.js",
-          "hash": "8817896277026209537",
-          "deps": [
-            "npm:@graphql-tools/merge"
-          ]
-        },
-        {
-          "file": "apps/backend/src/resolvers/transaction.resolver.js",
-          "hash": "18305748825438363874"
-        },
-        {
-          "file": "apps/backend/src/resolvers/user.resolver.js",
-          "hash": "9933190993551347905",
-          "deps": [
-            "npm:bcryptjs"
-          ]
-        },
-        {
-          "file": "apps/backend/src/typeDefs/index.js",
-          "hash": "15652775856216034937",
-          "deps": [
-            "npm:@graphql-tools/merge"
-          ]
-        },
-        {
-          "file": "apps/backend/src/typeDefs/transaction.typeDef.js",
-          "hash": "2581704364462781587"
-        },
-        {
-          "file": "apps/backend/src/typeDefs/user.typeDef.js",
-          "hash": "16102357554403527336"
-        },
-        {
-          "file": "apps/backend/tsconfig.app.json",
-          "hash": "7688813067849340111"
-        },
-        {
-          "file": "apps/backend/tsconfig.json",
-          "hash": "3490524966360018312"
-        },
-        {
-          "file": "apps/backend/tsconfig.spec.json",
-          "hash": "18403016037660081132"
-        }
-      ],
-      "expense-tracker": [
-        {
-          "file": ".babelrc",
-          "hash": "9538424453179501310"
-        },
-        {
-          "file": ".eslintignore",
-          "hash": "7663861978715868291"
-        },
-        {
-          "file": ".eslintrc.json",
-          "hash": "18315524891129148814"
-        },
-        {
-          "file": ".gitattributes",
-          "hash": "15484413202075168134"
-        },
-        {
-          "file": ".gitignore",
-          "hash": "7098302521368294647"
-        },
-        {
-          "file": ".prettierignore",
-          "hash": "14688272390704683536"
-        },
-        {
-          "file": ".prettierrc",
-          "hash": "16267754514737964994"
-        },
-        {
-          "file": "dist/apps/backend/package.json",
-          "hash": "12966165998113300014"
-        },
-        {
-          "file": "dist/apps/frontend/404.svg",
-          "hash": "2791364094500809854"
-        },
-        {
-          "file": "dist/apps/frontend/assets/index-BP3fl_XD.js",
-          "hash": "6765907847922933436"
-        },
-        {
-          "file": "dist/apps/frontend/assets/index-CLw6WA33.css",
-          "hash": "6471803366839534475"
-        },
-        {
-          "file": "dist/apps/frontend/assets/vendor-C_gYsUBP.js",
-          "hash": "500365387684323255"
-        },
-        {
-          "file": "dist/apps/frontend/index.html",
-          "hash": "6446025079673865749"
-        },
-        {
-          "file": "jest.config.cjs",
-          "hash": "3494843969422251966",
-          "deps": [
-            "npm:@nx/jest"
-          ]
-        },
-        {
-          "file": "jest.preset.cjs",
-          "hash": "9430166341120122740",
-          "deps": [
-            "npm:@nx/jest"
-          ]
-        },
-        {
-          "file": "nx.json",
-          "hash": "15058137472242768353"
-        },
-        {
-          "file": "package-lock.json",
-          "hash": "14749711833128311087"
-        },
-        {
-          "file": "package.json",
-          "hash": "6002797738077400907",
-          "deps": [
-            "npm:@nrwl/node",
-            "npm:@nrwl/nx",
-            "npm:@nrwl/react",
-            "npm:@nx/cypress",
-            "npm:@nx/esbuild",
-            "npm:@nx/eslint",
-            "npm:@nx/eslint-plugin",
-            "npm:@nx/jest",
-            "npm:@nx/js",
-            "npm:@nx/node",
-            "npm:@nx/react",
-            "npm:@nx/vite",
-            "npm:@nx/web",
-            "npm:@swc-node/register",
-            "npm:@swc/cli",
-            "npm:@swc/core",
-            "npm:@swc/helpers",
-            "npm:@testing-library/react",
-            "npm:@types/express",
-            "npm:@types/jest",
-            "npm:@types/node",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:@typescript-eslint/eslint-plugin",
-            "npm:@typescript-eslint/parser",
-            "npm:@vitejs/plugin-react",
-            "npm:@vitest/ui",
-            "npm:autoprefixer",
-            "npm:babel-jest",
-            "npm:cypress",
-            "npm:esbuild",
-            "npm:eslint",
-            "npm:eslint-config-prettier",
-            "npm:eslint-plugin-cypress",
-            "npm:eslint-plugin-import",
-            "npm:eslint-plugin-jsx-a11y",
-            "npm:eslint-plugin-react",
-            "npm:eslint-plugin-react-hooks",
-            "npm:jest",
-            "npm:jest-environment-jsdom",
-            "npm:jest-environment-node",
-            "npm:jsdom",
-            "npm:nodemon",
-            "npm:nx",
-            "npm:postcss",
-            "npm:prettier",
-            "npm:tailwindcss",
-            "npm:ts-jest",
-            "npm:ts-node",
-            "npm:typescript",
-            "npm:vite",
-            "npm:vitest",
-            "npm:@apollo/client",
-            "npm:@apollo/server",
-            "npm:@graphql-tools/merge",
-            "npm:@tailwindcss/aspect-ratio",
-            "npm:axios",
-            "npm:bcryptjs",
-            "npm:chart.js",
-            "npm:clsx",
-            "npm:connect-mongodb-session",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:express",
-            "npm:express-session",
-            "npm:framer-motion",
-            "npm:graphql",
-            "npm:graphql-passport",
-            "npm:mini-svg-data-uri",
-            "npm:mongoose",
-            "npm:passport",
-            "npm:react",
-            "npm:react-chartjs-2",
-            "npm:react-dom",
-            "npm:react-hook-form",
-            "npm:react-hot-toast",
-            "npm:react-icons",
-            "npm:react-router-dom",
-            "npm:tailwind-merge",
-            "npm:tslib"
-          ]
-        },
-        {
-          "file": "tsconfig.base.json",
-          "hash": "15634308399200872254"
-        },
-        {
-          "file": "dist/apps/backend/package-lock.json",
-          "hash": "11384044173739825242"
-        },
-        {
-          "file": "dist/apps/backend/index.js",
-          "hash": "10811234308885259311",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:passport",
-            "npm:express-session",
-            "npm:connect-mongodb-session",
-            "npm:@apollo/server",
-            "npm:graphql-passport",
-            "npm:@graphql-tools/merge",
-            "npm:mongoose",
-            "npm:bcryptjs"
-          ]
-        }
-      ],
       "frontend": [
         {
           "file": "apps/frontend/.eslintrc.json",
@@ -643,6 +350,307 @@
             "npm:@vitejs/plugin-react",
             "npm:@nx/vite"
           ]
+        }
+      ],
+      "backend": [
+        {
+          "file": "apps/backend/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/backend/cron.js",
+          "hash": "10099667225357372471",
+          "deps": [
+            "npm:cron"
+          ]
+        },
+        {
+          "file": "apps/backend/jest.config.cjs",
+          "hash": "9081822225419753379"
+        },
+        {
+          "file": "apps/backend/project.json",
+          "hash": "3003762641399757820"
+        },
+        {
+          "file": "apps/backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/db/connectDB.js",
+          "hash": "8366228820784824891",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/index.js",
+          "hash": "4585884163997427896",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:passport",
+            "npm:express-session",
+            "npm:connect-mongodb-session",
+            "npm:@apollo/server",
+            "npm:graphql-passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/transaction.model.js",
+          "hash": "18430119956314147527",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/models/user.model.js",
+          "hash": "5814149081798832393",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/backend/src/passport/passport.config.js",
+          "hash": "10062503802453402047",
+          "deps": [
+            "npm:passport",
+            "npm:bcryptjs",
+            "npm:graphql-passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/index.js",
+          "hash": "8817896277026209537",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/resolvers/transaction.resolver.js",
+          "hash": "18305748825438363874"
+        },
+        {
+          "file": "apps/backend/src/resolvers/user.resolver.js",
+          "hash": "9933190993551347905",
+          "deps": [
+            "npm:bcryptjs"
+          ]
+        },
+        {
+          "file": "apps/backend/src/typeDefs/index.js",
+          "hash": "15652775856216034937",
+          "deps": [
+            "npm:@graphql-tools/merge"
+          ]
+        },
+        {
+          "file": "apps/backend/src/typeDefs/transaction.typeDef.js",
+          "hash": "2581704364462781587"
+        },
+        {
+          "file": "apps/backend/src/typeDefs/user.typeDef.js",
+          "hash": "16102357554403527336"
+        },
+        {
+          "file": "apps/backend/tsconfig.app.json",
+          "hash": "7688813067849340111"
+        },
+        {
+          "file": "apps/backend/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/backend/tsconfig.spec.json",
+          "hash": "18403016037660081132"
+        }
+      ],
+      "expense-tracker": [
+        {
+          "file": ".babelrc",
+          "hash": "9538424453179501310"
+        },
+        {
+          "file": ".eslintignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "18315524891129148814"
+        },
+        {
+          "file": ".gitattributes",
+          "hash": "15484413202075168134"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "7098302521368294647"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "14688272390704683536"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": "dist/apps/backend/index.js",
+          "hash": "10811234308885259311",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:passport",
+            "npm:express-session",
+            "npm:connect-mongodb-session",
+            "npm:@apollo/server",
+            "npm:graphql-passport",
+            "npm:@graphql-tools/merge",
+            "npm:mongoose",
+            "npm:bcryptjs"
+          ]
+        },
+        {
+          "file": "dist/apps/backend/package-lock.json",
+          "hash": "11384044173739825242"
+        },
+        {
+          "file": "dist/apps/backend/package.json",
+          "hash": "12966165998113300014"
+        },
+        {
+          "file": "dist/apps/frontend/404.svg",
+          "hash": "2791364094500809854"
+        },
+        {
+          "file": "dist/apps/frontend/assets/index-BP3fl_XD.js",
+          "hash": "6765907847922933436"
+        },
+        {
+          "file": "dist/apps/frontend/assets/index-CLw6WA33.css",
+          "hash": "6471803366839534475"
+        },
+        {
+          "file": "dist/apps/frontend/assets/vendor-C_gYsUBP.js",
+          "hash": "500365387684323255"
+        },
+        {
+          "file": "dist/apps/frontend/index.html",
+          "hash": "6446025079673865749"
+        },
+        {
+          "file": "jest.config.cjs",
+          "hash": "3494843969422251966",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "jest.preset.cjs",
+          "hash": "9430166341120122740",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "15058137472242768353"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "9826541585821551615"
+        },
+        {
+          "file": "package.json",
+          "hash": "2024869816798547702",
+          "deps": [
+            "npm:@nrwl/node",
+            "npm:@nrwl/nx",
+            "npm:@nrwl/react",
+            "npm:@nx/cypress",
+            "npm:@nx/esbuild",
+            "npm:@nx/eslint",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/jest",
+            "npm:@nx/js",
+            "npm:@nx/node",
+            "npm:@nx/react",
+            "npm:@nx/vite",
+            "npm:@nx/web",
+            "npm:@swc-node/register",
+            "npm:@swc/cli",
+            "npm:@swc/core",
+            "npm:@swc/helpers",
+            "npm:@testing-library/react",
+            "npm:@types/express",
+            "npm:@types/jest",
+            "npm:@types/node",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:@vitejs/plugin-react",
+            "npm:@vitest/ui",
+            "npm:autoprefixer",
+            "npm:babel-jest",
+            "npm:cypress",
+            "npm:esbuild",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:eslint-plugin-cypress",
+            "npm:eslint-plugin-import",
+            "npm:eslint-plugin-jsx-a11y",
+            "npm:eslint-plugin-react",
+            "npm:eslint-plugin-react-hooks",
+            "npm:jest",
+            "npm:jest-environment-jsdom",
+            "npm:jest-environment-node",
+            "npm:jsdom",
+            "npm:nodemon",
+            "npm:nx",
+            "npm:postcss",
+            "npm:prettier",
+            "npm:tailwindcss",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:vite",
+            "npm:vitest",
+            "npm:@apollo/client",
+            "npm:@apollo/server",
+            "npm:@graphql-tools/merge",
+            "npm:@tailwindcss/aspect-ratio",
+            "npm:axios",
+            "npm:bcryptjs",
+            "npm:chart.js",
+            "npm:clsx",
+            "npm:connect-mongodb-session",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:express",
+            "npm:express-session",
+            "npm:framer-motion",
+            "npm:graphql",
+            "npm:graphql-passport",
+            "npm:mini-svg-data-uri",
+            "npm:mongoose",
+            "npm:passport",
+            "npm:react",
+            "npm:react-chartjs-2",
+            "npm:react-dom",
+            "npm:react-hook-form",
+            "npm:react-hot-toast",
+            "npm:react-icons",
+            "npm:react-router-dom",
+            "npm:tailwind-merge",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "15634308399200872254"
         }
       ]
     }
