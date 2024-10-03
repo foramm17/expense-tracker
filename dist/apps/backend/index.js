@@ -467,7 +467,7 @@ app.use(express.static(path.join(__dirname, "dist/apps/frontend")));
 app.use(
   "/graphql",
   cors({
-    origin: process.env.NODE_ENV === "production" ? "https://your-render-app-name.onrender.com" : "http://localhost:4000",
+    origin: process.env.NODE_ENV === "production" ? "https://your-render-app-name.onrender.com" : "http://localhost:3000",
     credentials: true
   }),
   express.json(),

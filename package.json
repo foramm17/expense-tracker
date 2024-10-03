@@ -4,7 +4,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/apps/backend/index.js",
-    "build": "npm install && nx build backend --skip-nx-cache && nx build frontend --skip-nx-cache",
+    "postinstall": "nx build backend --skip-nx-cache && nx build frontend --skip-nx-cache --configuration=production",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "NODE_OPTIONS='--max_old_space_size=480' nx build backend --skip-nx-cache",
+    "build:frontend": "NODE_OPTIONS='--max_old_space_size=480' nx build frontend --skip-nx-cache --configuration=production",
+    "dev:frontend": "nx serve frontend",
+    "dev:backend": "nx serve backend",
     "dev": "nx run-many --target=serve --projects=backend,frontend --parallel"
   },
   "type": "module",

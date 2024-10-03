@@ -133,7 +133,7 @@
         },
         {
           "file": "apps/backend/project.json",
-          "hash": "10260740659544034527"
+          "hash": "3003762641399757820"
         },
         {
           "file": "apps/backend/src/assets/.gitkeep",
@@ -147,12 +147,8 @@
           ]
         },
         {
-          "file": "apps/backend/src/dummyData/data.js",
-          "hash": "13161578898348364476"
-        },
-        {
           "file": "apps/backend/src/index.js",
-          "hash": "9231861515482594020",
+          "hash": "6739011125279618658",
           "deps": [
             "npm:express",
             "npm:cors",
@@ -162,13 +158,6 @@
             "npm:connect-mongodb-session",
             "npm:@apollo/server",
             "npm:graphql-passport"
-          ]
-        },
-        {
-          "file": "apps/backend/src/main.ts",
-          "hash": "12003555863464044675",
-          "deps": [
-            "npm:express"
           ]
         },
         {
@@ -240,50 +229,6 @@
           "hash": "18403016037660081132"
         }
       ],
-      "backend-e2e": [
-        {
-          "file": "apps/backend-e2e/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/backend-e2e/jest.config.cjs",
-          "hash": "5671890144782764258"
-        },
-        {
-          "file": "apps/backend-e2e/project.json",
-          "hash": "18395645934347403237"
-        },
-        {
-          "file": "apps/backend-e2e/src/backend/backend.spec.ts",
-          "hash": "4579662685003779048",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend-e2e/src/support/global-setup.ts",
-          "hash": "2568409276037275290"
-        },
-        {
-          "file": "apps/backend-e2e/src/support/global-teardown.ts",
-          "hash": "5275447082211835490"
-        },
-        {
-          "file": "apps/backend-e2e/src/support/test-setup.ts",
-          "hash": "10984585515912236441",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend-e2e/tsconfig.json",
-          "hash": "15443990093475294480"
-        },
-        {
-          "file": "apps/backend-e2e/tsconfig.spec.json",
-          "hash": "6545760172440664414"
-        }
-      ],
       "expense-tracker": [
         {
           "file": ".babelrc",
@@ -303,7 +248,7 @@
         },
         {
           "file": ".gitignore",
-          "hash": "7554724633618656338"
+          "hash": "7098302521368294647"
         },
         {
           "file": ".prettierignore",
@@ -314,27 +259,6 @@
           "hash": "16267754514737964994"
         },
         {
-          "file": "dist/apps/backend/index.js",
-          "hash": "6746634665050730939",
-          "deps": [
-            "npm:express",
-            "npm:cors",
-            "npm:dotenv",
-            "npm:passport",
-            "npm:express-session",
-            "npm:connect-mongodb-session",
-            "npm:@apollo/server",
-            "npm:graphql-passport",
-            "npm:@graphql-tools/merge",
-            "npm:mongoose",
-            "npm:bcryptjs"
-          ]
-        },
-        {
-          "file": "dist/apps/backend/package-lock.json",
-          "hash": "11384044173739825242"
-        },
-        {
           "file": "dist/apps/backend/package.json",
           "hash": "12966165998113300014"
         },
@@ -343,16 +267,20 @@
           "hash": "2791364094500809854"
         },
         {
-          "file": "dist/apps/frontend/assets/index-DAUsmK4w.js",
-          "hash": "6300905795890264133"
+          "file": "dist/apps/frontend/assets/index-BP3fl_XD.js",
+          "hash": "6765907847922933436"
         },
         {
-          "file": "dist/apps/frontend/assets/index-hGksjaao.css",
-          "hash": "18103531970662963745"
+          "file": "dist/apps/frontend/assets/index-CLw6WA33.css",
+          "hash": "6471803366839534475"
+        },
+        {
+          "file": "dist/apps/frontend/assets/vendor-C_gYsUBP.js",
+          "hash": "500365387684323255"
         },
         {
           "file": "dist/apps/frontend/index.html",
-          "hash": "14303512028539111976"
+          "hash": "6446025079673865749"
         },
         {
           "file": "jest.config.cjs",
@@ -374,11 +302,11 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "10475821767236117471"
+          "hash": "14749711833128311087"
         },
         {
           "file": "package.json",
-          "hash": "9185964518898327393",
+          "hash": "6002797738077400907",
           "deps": [
             "npm:@nrwl/node",
             "npm:@nrwl/nx",
@@ -465,6 +393,27 @@
         {
           "file": "tsconfig.base.json",
           "hash": "15634308399200872254"
+        },
+        {
+          "file": "dist/apps/backend/package-lock.json",
+          "hash": "11384044173739825242"
+        },
+        {
+          "file": "dist/apps/backend/index.js",
+          "hash": "10811234308885259311",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:dotenv",
+            "npm:passport",
+            "npm:express-session",
+            "npm:connect-mongodb-session",
+            "npm:@apollo/server",
+            "npm:graphql-passport",
+            "npm:@graphql-tools/merge",
+            "npm:mongoose",
+            "npm:bcryptjs"
+          ]
         }
       ],
       "frontend": [
@@ -486,7 +435,7 @@
         },
         {
           "file": "apps/frontend/project.json",
-          "hash": "1581687993160957088"
+          "hash": "1055083680855778224"
         },
         {
           "file": "apps/frontend/public/404.svg",
@@ -503,7 +452,7 @@
         },
         {
           "file": "apps/frontend/src/components/Card.jsx",
-          "hash": "18401480049162605019",
+          "hash": "14311292792810258833",
           "deps": [
             "npm:react-icons",
             "npm:react-router-dom",
@@ -527,13 +476,21 @@
           "hash": "1164339568847022928"
         },
         {
-          "file": "apps/frontend/src/components/TransactionForm.jsx",
-          "hash": "1966394652906670316",
+          "file": "apps/frontend/src/components/forms/TransactionForm.jsx",
+          "hash": "9765381121741397289",
           "deps": [
-            "npm:@apollo/client",
             "npm:react",
             "npm:react-hook-form",
+            "npm:@apollo/client",
             "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/forms/TransactionFormFields.jsx",
+          "hash": "15558688511259734891",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form"
           ]
         },
         {
@@ -541,14 +498,33 @@
           "hash": "14962047916714052523"
         },
         {
-          "file": "apps/frontend/src/components/ui/GridBackground.jsx",
-          "hash": "541802846472528960"
+          "file": "apps/frontend/src/components/ui/AuroraBackground.jsx",
+          "hash": "16591365779979199333",
+          "deps": [
+            "npm:react"
+          ]
         },
         {
           "file": "apps/frontend/src/components/ui/Header.jsx",
-          "hash": "3017006460028196782",
+          "hash": "13712528358311700736",
           "deps": [
             "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/ui/InputField.jsx",
+          "hash": "17994079865043258325",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form"
+          ]
+        },
+        {
+          "file": "apps/frontend/src/components/ui/SelectField.jsx",
+          "hash": "8014894085713276183",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form"
           ]
         },
         {
@@ -585,7 +561,7 @@
         },
         {
           "file": "apps/frontend/src/main.jsx",
-          "hash": "16990726354328175179",
+          "hash": "157191896193681307",
           "deps": [
             "npm:react",
             "npm:react-dom",
@@ -595,7 +571,7 @@
         },
         {
           "file": "apps/frontend/src/pages/HomePage.jsx",
-          "hash": "12130675208268888009",
+          "hash": "8678827580318392953",
           "deps": [
             "npm:react-chartjs-2",
             "npm:chart.js",
@@ -631,7 +607,7 @@
         },
         {
           "file": "apps/frontend/src/pages/TransactionPage.jsx",
-          "hash": "17024709892724053375",
+          "hash": "1635661760666185510",
           "deps": [
             "npm:react",
             "npm:react-hook-form",
@@ -654,62 +630,19 @@
         },
         {
           "file": "apps/frontend/tailwind.config.js",
-          "hash": "13518657443063852973",
+          "hash": "13284019466939342203",
           "deps": [
-            "npm:mini-svg-data-uri",
             "npm:tailwindcss"
           ]
         },
         {
           "file": "apps/frontend/vite.config.js",
-          "hash": "3433569499239564149",
+          "hash": "11321393403435855006",
           "deps": [
             "npm:vite",
             "npm:@vitejs/plugin-react",
             "npm:@nx/vite"
           ]
-        }
-      ],
-      "frontend-e2e": [
-        {
-          "file": "apps/frontend-e2e/.eslintrc.json",
-          "hash": "14060216369337943343"
-        },
-        {
-          "file": "apps/frontend-e2e/cypress.config.ts",
-          "hash": "1919415040373795720",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/frontend-e2e/project.json",
-          "hash": "15610075581800364279"
-        },
-        {
-          "file": "apps/frontend-e2e/src/e2e/app.cy.ts",
-          "hash": "5906786348823687945"
-        },
-        {
-          "file": "apps/frontend-e2e/src/fixtures/example.json",
-          "hash": "11785586596216172004"
-        },
-        {
-          "file": "apps/frontend-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/frontend-e2e/src/support/commands.ts",
-          "hash": "5397443931564808659"
-        },
-        {
-          "file": "apps/frontend-e2e/src/support/e2e.ts",
-          "hash": "1054106023200826784"
-        },
-        {
-          "file": "apps/frontend-e2e/tsconfig.json",
-          "hash": "10740392072068377465"
         }
       ]
     }

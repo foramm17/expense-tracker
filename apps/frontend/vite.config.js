@@ -10,7 +10,8 @@ export default defineConfig({
     port: 3000,
     host: 'localhost',
     hmr: {
-      overlay: false, // Disable the HMR overlay
+      overlay: false,
+      clientPort: 3000,
     },
   },
 
@@ -27,6 +28,15 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          // Add other large dependencies here
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
   },
 
   esbuild: {
@@ -42,5 +52,13 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,jsx}'],
+  },
+
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
+  },
+
+  css: {
+    devSourcemap: true,
   },
 });

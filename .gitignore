@@ -1,4 +1,6 @@
 node_modules
 .env
 .nx/workspace-data/d/daemon.log
+apps/frontend-e2e
+apps/backend-e2e
 

@@ -1,286 +1,5 @@
 {
   "nodes": {
-    "frontend-e2e": {
-      "name": "frontend-e2e",
-      "type": "e2e",
-      "data": {
-        "root": "apps/frontend-e2e",
-        "targets": {
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "apps/frontend-e2e",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{projectRoot}/.eslintrc.json",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "e2e": {
-            "options": {
-              "cwd": "apps/frontend-e2e",
-              "command": "cypress run"
-            },
-            "cache": true,
-            "inputs": [
-              "default",
-              "^default",
-              {
-                "externalDependencies": [
-                  "cypress"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/videos",
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/screenshots"
-            ],
-            "parallelism": false,
-            "metadata": {
-              "technologies": [
-                "cypress"
-              ],
-              "description": "Runs Cypress Tests",
-              "help": {
-                "command": "npx cypress run --help",
-                "example": {
-                  "args": [
-                    "--dev",
-                    "--headed"
-                  ]
-                }
-              }
-            },
-            "configurations": {
-              "production": {
-                "command": "cypress run --env webServerCommand=\"npx nx run frontend:preview\""
-              }
-            },
-            "executor": "nx:run-commands"
-          },
-          "e2e-ci--src/e2e/app.cy.ts": {
-            "outputs": [
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/videos",
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/screenshots"
-            ],
-            "inputs": [
-              "default",
-              "^default",
-              {
-                "externalDependencies": [
-                  "cypress"
-                ]
-              }
-            ],
-            "cache": true,
-            "options": {
-              "cwd": "apps/frontend-e2e",
-              "command": "cypress run --env webServerCommand=\"npx nx run frontend:preview\" --spec src/e2e/app.cy.ts --config='{\"baseUrl\": \"http://localhost:4300\"}'"
-            },
-            "parallelism": false,
-            "metadata": {
-              "technologies": [
-                "cypress"
-              ],
-              "description": "Runs Cypress Tests in src/e2e/app.cy.ts in CI",
-              "help": {
-                "command": "npx cypress run --help",
-                "example": {
-                  "args": [
-                    "--dev",
-                    "--headed"
-                  ]
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {}
-          },
-          "e2e-ci": {
-            "executor": "nx:noop",
-            "cache": true,
-            "inputs": [
-              "default",
-              "^default",
-              {
-                "externalDependencies": [
-                  "cypress"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/videos",
-              "{workspaceRoot}/dist/cypress/apps/frontend-e2e/screenshots"
-            ],
-            "dependsOn": [
-              {
-                "target": "e2e-ci--src/e2e/app.cy.ts",
-                "projects": "self",
-                "params": "forward"
-              }
-            ],
-            "parallelism": false,
-            "metadata": {
-              "technologies": [
-                "cypress"
-              ],
-              "description": "Runs Cypress Tests in CI",
-              "nonAtomizedTarget": "e2e",
-              "help": {
-                "command": "npx cypress run --help",
-                "example": {
-                  "args": [
-                    "--dev",
-                    "--headed"
-                  ]
-                }
-              }
-            },
-            "configurations": {},
-            "options": {}
-          },
-          "open-cypress": {
-            "options": {
-              "cwd": "apps/frontend-e2e",
-              "command": "cypress open"
-            },
-            "metadata": {
-              "technologies": [
-                "cypress"
-              ],
-              "description": "Opens Cypress",
-              "help": {
-                "command": "npx cypress open --help",
-                "example": {
-                  "args": [
-                    "--dev",
-                    "--e2e"
-                  ]
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          }
-        },
-        "projectType": "application",
-        "metadata": {
-          "targetGroups": {
-            "E2E (CI)": [
-              "e2e-ci--src/e2e/app.cy.ts",
-              "e2e-ci"
-            ]
-          }
-        },
-        "name": "frontend-e2e",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "apps/frontend-e2e/src",
-        "tags": [],
-        "implicitDependencies": [
-          "frontend"
-        ]
-      }
-    },
-    "backend-e2e": {
-      "name": "backend-e2e",
-      "type": "e2e",
-      "data": {
-        "root": "apps/backend-e2e",
-        "targets": {
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "apps/backend-e2e",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{projectRoot}/.eslintrc.json",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "e2e": {
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{e2eProjectRoot}"
-            ],
-            "options": {
-              "jestConfig": "apps/backend-e2e/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "dependsOn": [
-              "backend:build"
-            ],
-            "configurations": {},
-            "parallelism": true
-          }
-        },
-        "name": "backend-e2e",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "implicitDependencies": [
-          "backend"
-        ],
-        "tags": []
-      }
-    },
     "frontend": {
       "name": "frontend",
       "type": "app",
@@ -552,9 +271,8 @@
               "production": {
                 "esbuildOptions": {
                   "sourcemap": false,
-                  "outExtension": {
-                    ".js": ".js"
-                  }
+                  "minify": true,
+                  "treeShaking": true
                 }
               }
             },
@@ -569,18 +287,18 @@
             ]
           },
           "serve": {
-            "executor": "nx:run-commands",
+            "executor": "@nx/js:node",
             "options": {
-              "command": "node apps/backend/src/index.js"
+              "buildTarget": "backend:build",
+              "watch": true
             },
             "configurations": {},
             "parallelism": true
           },
           "dev": {
-            "executor": "@nx/js:node",
+            "executor": "nx:run-commands",
             "options": {
-              "buildTarget": "backend:build",
-              "watch": true
+              "command": "nodemon --watch apps/backend/src apps/backend/src/index.js"
             },
             "configurations": {},
             "parallelism": true
@@ -608,7 +326,12 @@
           "targetGroups": {
             "NPM Scripts": [
               "start",
+              "postinstall",
               "build",
+              "build:backend",
+              "build:frontend",
+              "dev:frontend",
+              "dev:backend",
               "dev"
             ]
           },
@@ -627,14 +350,74 @@
             "configurations": {},
             "parallelism": true
           },
+          "postinstall": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "postinstall"
+            },
+            "metadata": {
+              "scriptContent": "nx build backend --skip-nx-cache && nx build frontend --skip-nx-cache --configuration=production",
+              "runCommand": "npm run postinstall"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
           "build": {
             "executor": "nx:run-script",
             "options": {
               "script": "build"
             },
             "metadata": {
-              "scriptContent": "npm install && nx build backend --skip-nx-cache && nx build frontend --skip-nx-cache",
+              "scriptContent": "npm run build:backend && npm run build:frontend",
               "runCommand": "npm run build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build:backend": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:backend"
+            },
+            "metadata": {
+              "scriptContent": "NODE_OPTIONS='--max_old_space_size=480' nx build backend --skip-nx-cache",
+              "runCommand": "npm run build:backend"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build:frontend": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:frontend"
+            },
+            "metadata": {
+              "scriptContent": "NODE_OPTIONS='--max_old_space_size=480' nx build frontend --skip-nx-cache --configuration=production",
+              "runCommand": "npm run build:frontend"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev:frontend": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev:frontend"
+            },
+            "metadata": {
+              "scriptContent": "nx serve frontend",
+              "runCommand": "npm run dev:frontend"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "dev:backend": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev:backend"
+            },
+            "metadata": {
+              "scriptContent": "nx serve backend",
+              "runCommand": "npm run dev:backend"
             },
             "configurations": {},
             "parallelism": true
@@ -3409,6 +3192,159 @@
         "version": "1.1.9",
         "packageName": "@mongodb-js/saslprep",
         "hash": "sha512-tVkljjeEaAhCqTzajSdgbQ6gE6f3oneVwa3iXR6csiEwXXOFsiC6Uh9iAjAhXPtqa/XMDHWjjeNH/77m/Yq2dw=="
+      }
+    },
+    "npm:@napi-rs/nice": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice",
+        "hash": "sha512-zM0mVWSXE0a0h9aKACLwKmD6nHcRiKrPpCfvaKqG1CqDEyjEawId0ocXxVzPMCAm6kkWr2P025msfxXEnt8UGQ=="
+      }
+    },
+    "npm:@napi-rs/nice-android-arm-eabi": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-android-arm-eabi",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-android-arm-eabi",
+        "hash": "sha512-5qpvOu5IGwDo7MEKVqqyAxF90I6aLj4n07OzpARdgDRfz8UbBztTByBp0RC59r3J1Ij8uzYi6jI7r5Lws7nn6w=="
+      }
+    },
+    "npm:@napi-rs/nice-android-arm64": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-android-arm64",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-android-arm64",
+        "hash": "sha512-GqvXL0P8fZ+mQqG1g0o4AO9hJjQaeYG84FRfZaYjyJtZZZcMjXW5TwkL8Y8UApheJgyE13TQ4YNUssQaTgTyvA=="
+      }
+    },
+    "npm:@napi-rs/nice-darwin-arm64": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-darwin-arm64",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-darwin-arm64",
+        "hash": "sha512-91k3HEqUl2fsrz/sKkuEkscj6EAj3/eZNCLqzD2AA0TtVbkQi8nqxZCZDMkfklULmxLkMxuUdKe7RvG/T6s2AA=="
+      }
+    },
+    "npm:@napi-rs/nice-darwin-x64": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-darwin-x64",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-darwin-x64",
+        "hash": "sha512-jXnMleYSIR/+TAN/p5u+NkCA7yidgswx5ftqzXdD5wgy/hNR92oerTXHc0jrlBisbd7DpzoaGY4cFD7Sm5GlgQ=="
+      }
+    },
+    "npm:@napi-rs/nice-freebsd-x64": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-freebsd-x64",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-freebsd-x64",
+        "hash": "sha512-j+iJ/ezONXRQsVIB/FJfwjeQXX7A2tf3gEXs4WUGFrJjpe/z2KB7sOv6zpkm08PofF36C9S7wTNuzHZ/Iiccfw=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-arm-gnueabihf": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-arm-gnueabihf",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-arm-gnueabihf",
+        "hash": "sha512-G8RgJ8FYXYkkSGQwywAUh84m946UTn6l03/vmEXBYNJxQJcD+I3B3k5jmjFG/OPiU8DfvxutOP8bi+F89MCV7Q=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-arm64-gnu": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-arm64-gnu",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-arm64-gnu",
+        "hash": "sha512-IMDak59/W5JSab1oZvmNbrms3mHqcreaCeClUjwlwDr0m3BoR09ZiN8cKFBzuSlXgRdZ4PNqCYNeGQv7YMTjuA=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-arm64-musl": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-arm64-musl",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-arm64-musl",
+        "hash": "sha512-wG8fa2VKuWM4CfjOjjRX9YLIbysSVV1S3Kgm2Fnc67ap/soHBeYZa6AGMeR5BJAylYRjnoVOzV19Cmkco3QEPw=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-ppc64-gnu": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-ppc64-gnu",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-ppc64-gnu",
+        "hash": "sha512-lxQ9WrBf0IlNTCA9oS2jg/iAjQyTI6JHzABV664LLrLA/SIdD+I1i3Mjf7TsnoUbgopBcCuDztVLfJ0q9ubf6Q=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-riscv64-gnu": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-riscv64-gnu",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-riscv64-gnu",
+        "hash": "sha512-3xs69dO8WSWBb13KBVex+yvxmUeEsdWexxibqskzoKaWx9AIqkMbWmE2npkazJoopPKX2ULKd8Fm9veEn0g4Ig=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-s390x-gnu": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-s390x-gnu",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-s390x-gnu",
+        "hash": "sha512-lMFI3i9rlW7hgToyAzTaEybQYGbQHDrpRkg+1gJWEpH0PLAQoZ8jiY0IzakLfNWnVda1eTYYlxxFYzW8Rqczkg=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-x64-gnu": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-x64-gnu",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-x64-gnu",
+        "hash": "sha512-XQAJs7DRN2GpLN6Fb+ZdGFeYZDdGl2Fn3TmFlqEL5JorgWKrQGRUrpGKbgZ25UeZPILuTKJ+OowG2avN8mThBA=="
+      }
+    },
+    "npm:@napi-rs/nice-linux-x64-musl": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-linux-x64-musl",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-linux-x64-musl",
+        "hash": "sha512-/rodHpRSgiI9o1faq9SZOp/o2QkKQg7T+DK0R5AkbnI/YxvAIEHf2cngjYzLMQSQgUhxym+LFr+UGZx4vK4QdQ=="
+      }
+    },
+    "npm:@napi-rs/nice-win32-arm64-msvc": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-win32-arm64-msvc",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-win32-arm64-msvc",
+        "hash": "sha512-rEcz9vZymaCB3OqEXoHnp9YViLct8ugF+6uO5McifTedjq4QMQs3DHz35xBEGhH3gJWEsXMUbzazkz5KNM5YUg=="
+      }
+    },
+    "npm:@napi-rs/nice-win32-ia32-msvc": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-win32-ia32-msvc",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-win32-ia32-msvc",
+        "hash": "sha512-t7eBAyPUrWL8su3gDxw9xxxqNwZzAqKo0Szv3IjVQd1GpXXVkb6vBBQUuxfIYaXMzZLwlxRQ7uzM2vdUE9ULGw=="
+      }
+    },
+    "npm:@napi-rs/nice-win32-x64-msvc": {
+      "type": "npm",
+      "name": "npm:@napi-rs/nice-win32-x64-msvc",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@napi-rs/nice-win32-x64-msvc",
+        "hash": "sha512-JlF+uDcatt3St2ntBG8H02F1mM45i5SF9W+bIKiReVE6wiy3o16oBP/yxt+RZ+N6LbCImJXJ6bXNO2kn9AXicg=="
       }
     },
     "npm:@napi-rs/wasm-runtime": {
@@ -8311,9 +8247,9 @@
       "type": "npm",
       "name": "npm:eslint-module-utils",
       "data": {
-        "version": "2.11.0",
+        "version": "2.12.0",
         "packageName": "eslint-module-utils",
-        "hash": "sha512-gbBE5Hitek/oG6MUVj6sFuzEjA/ClzNflVrLovHi/JgLdC7fiN5gLAY1WIPW1a0V5I999MnsrvVrCOGmmVqDBQ=="
+        "hash": "sha512-wALZ0HFoytlyh/1+4wuZ9FJCD/leWHQzzrxJ8+rebyReSLk7LApMyd3WJaLVoN+D5+WIdJyDK1c6JnE65V4Zyg=="
       }
     },
     "npm:eslint-plugin-cypress": {
@@ -11331,15 +11267,6 @@
         "hash": "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
       }
     },
-    "npm:nice-napi": {
-      "type": "npm",
-      "name": "npm:nice-napi",
-      "data": {
-        "version": "1.0.2",
-        "packageName": "nice-napi",
-        "hash": "sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA=="
-      }
-    },
     "npm:no-case": {
       "type": "npm",
       "name": "npm:no-case",
@@ -11356,15 +11283,6 @@
         "version": "3.1.1",
         "packageName": "node-abort-controller",
         "hash": "sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ=="
-      }
-    },
-    "npm:node-addon-api": {
-      "type": "npm",
-      "name": "npm:node-addon-api",
-      "data": {
-        "version": "3.2.1",
-        "packageName": "node-addon-api",
-        "hash": "sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A=="
       }
     },
     "npm:node-fetch": {
@@ -11392,15 +11310,6 @@
         "version": "7.0.0",
         "packageName": "webidl-conversions",
         "hash": "sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g=="
-      }
-    },
-    "npm:node-gyp-build": {
-      "type": "npm",
-      "name": "npm:node-gyp-build",
-      "data": {
-        "version": "4.8.2",
-        "packageName": "node-gyp-build",
-        "hash": "sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw=="
       }
     },
     "npm:node-int64": {
@@ -11443,9 +11352,9 @@
       "type": "npm",
       "name": "npm:nodemon",
       "data": {
-        "version": "3.1.4",
+        "version": "3.1.7",
         "packageName": "nodemon",
-        "hash": "sha512-wjPBbFhtpJwmIeY2yP7QF+UKzPfltVGtfce1g/bB15/8vCGZj8uxD62b/b9M9/WVgme0NZudpownKN+c0plXlQ=="
+        "hash": "sha512-hLj7fuMow6f0lbB0cD14Lz2xNjwsyruH251Pk4t/yIitCFJbmY1myuLlHm/q06aST4jg6EgAh74PIBBrRqpVAQ=="
       }
     },
     "npm:normalize-path": {
@@ -11956,9 +11865,9 @@
       "type": "npm",
       "name": "npm:piscina",
       "data": {
-        "version": "4.6.1",
+        "version": "4.7.0",
         "packageName": "piscina",
-        "hash": "sha512-z30AwWGtQE+Apr+2WBZensP2lIvwoaMcOPkQlIEmSGMJNUvaYACylPYrQM6wSdUNJlnDVMSpLv7xTMJqlVshOA=="
+        "hash": "sha512-b8hvkpp9zS0zsfa939b/jXbe64Z2gZv0Ha7FYPNUiDIB1y2AtxcOZdfP8xN8HFjUaqQiT9gRlfjAsoL8vdJ1Iw=="
       }
     },
     "npm:pkg-dir": {
@@ -13988,35 +13897,6 @@
     }
   },
   "dependencies": {
-    "frontend-e2e": [
-      {
-        "source": "frontend-e2e",
-        "target": "frontend",
-        "type": "implicit"
-      },
-      {
-        "source": "frontend-e2e",
-        "target": "npm:@nx/cypress",
-        "type": "static"
-      },
-      {
-        "source": "frontend-e2e",
-        "target": "npm:cypress",
-        "type": "static"
-      }
-    ],
-    "backend-e2e": [
-      {
-        "source": "backend-e2e",
-        "target": "backend",
-        "type": "implicit"
-      },
-      {
-        "source": "backend-e2e",
-        "target": "npm:axios",
-        "type": "static"
-      }
-    ],
     "frontend": [
       {
         "source": "frontend",
@@ -14071,11 +13951,6 @@
       {
         "source": "frontend",
         "target": "npm:tailwind-merge",
-        "type": "static"
-      },
-      {
-        "source": "frontend",
-        "target": "npm:mini-svg-data-uri",
         "type": "static"
       },
       {
@@ -14157,61 +14032,6 @@
       }
     ],
     "expense-tracker": [
-      {
-        "source": "expense-tracker",
-        "target": "npm:express",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:cors",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:dotenv",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:passport",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:express-session",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:connect-mongodb-session",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:@apollo/server",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:graphql-passport",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:@graphql-tools/merge",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:mongoose",
-        "type": "static"
-      },
-      {
-        "source": "expense-tracker",
-        "target": "npm:bcryptjs",
-        "type": "static"
-      },
       {
         "source": "expense-tracker",
         "target": "npm:@nx/jest",
@@ -14479,12 +14299,27 @@
       },
       {
         "source": "expense-tracker",
+        "target": "npm:@apollo/server",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:@graphql-tools/merge",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
         "target": "npm:@tailwindcss/aspect-ratio",
         "type": "static"
       },
       {
         "source": "expense-tracker",
         "target": "npm:axios",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:bcryptjs",
         "type": "static"
       },
       {
@@ -14499,6 +14334,31 @@
       },
       {
         "source": "expense-tracker",
+        "target": "npm:connect-mongodb-session",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:cors",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:dotenv",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:express",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:express-session",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
         "target": "npm:framer-motion",
         "type": "static"
       },
@@ -14509,7 +14369,22 @@
       },
       {
         "source": "expense-tracker",
+        "target": "npm:graphql-passport",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
         "target": "npm:mini-svg-data-uri",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:mongoose",
+        "type": "static"
+      },
+      {
+        "source": "expense-tracker",
+        "target": "npm:passport",
         "type": "static"
       },
       {
@@ -18906,6 +18781,88 @@
       {
         "source": "npm:@mongodb-js/saslprep",
         "target": "npm:sparse-bitfield",
+        "type": "static"
+      }
+    ],
+    "npm:@napi-rs/nice": [
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-android-arm-eabi",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-android-arm64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-darwin-arm64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-darwin-x64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-freebsd-x64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-arm-gnueabihf",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-arm64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-arm64-musl",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-ppc64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-riscv64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-s390x-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-x64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-linux-x64-musl",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-win32-arm64-msvc",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-win32-ia32-msvc",
+        "type": "static"
+      },
+      {
+        "source": "npm:@napi-rs/nice",
+        "target": "npm:@napi-rs/nice-win32-x64-msvc",
         "type": "static"
       }
     ],
@@ -28733,18 +28690,6 @@
         "type": "static"
       }
     ],
-    "npm:nice-napi": [
-      {
-        "source": "npm:nice-napi",
-        "target": "npm:node-addon-api",
-        "type": "static"
-      },
-      {
-        "source": "npm:nice-napi",
-        "target": "npm:node-gyp-build",
-        "type": "static"
-      }
-    ],
     "npm:no-case": [
       {
         "source": "npm:no-case",
@@ -28801,7 +28746,7 @@
       },
       {
         "source": "npm:nodemon",
-        "target": "npm:debug@4.3.6",
+        "target": "npm:debug@4.3.7",
         "type": "static"
       },
       {
@@ -29457,7 +29402,7 @@
     "npm:piscina": [
       {
         "source": "npm:piscina",
-        "target": "npm:nice-napi",
+        "target": "npm:@napi-rs/nice",
         "type": "static"
       }
     ],

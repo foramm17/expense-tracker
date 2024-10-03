@@ -18,36 +18,35 @@
         "assets": ["apps/backend/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
-      "sourcemap": true,
-      "outExtension": {
-        ".js": ".js"
-      },
-      "external": ["@apollo/server"]
-    }
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          },
+          "external": ["@apollo/server"]
+        }
       },
       "configurations": {
         "development": {},
         "production": {
           "esbuildOptions": {
             "sourcemap": false,
-            "outExtension": {
-              ".js": ".js"
-            }
+            "minify": true,
+            "treeShaking": true
           }
         }
       }
     },
     "serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "node apps/backend/src/index.js"
-      }
-    },
-    "dev": {
       "executor": "@nx/js:node",
       "options": {
         "buildTarget": "backend:build",
         "watch": true
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nodemon --watch apps/backend/src apps/backend/src/index.js"
       }
     }
   }

@@ -2,7 +2,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 import Cards from '../components/Cards.jsx';
-import TransactionForm from '../components/TransactionForm.jsx';
+import TransactionForm from '../components/forms/TransactionForm.jsx';
 import { useMutation, useQuery } from '@apollo/client';
 import { LOGOUT } from '../graphql/mutations/user.mutation.js';
 import { MdLogout } from 'react-icons/md';
@@ -10,30 +10,6 @@ import toast from 'react-hot-toast';
 import { GET_TRANSACTION_STATISTICS } from '../graphql/queries/transaction.query.js';
 import { GET_AUTHENTICATED_USER } from '../graphql/queries/user.query.js';
 import { useEffect, useState } from 'react';
-
-// const chartData = {
-//   labels: ['Saving', 'Expense', 'Investment'],
-//   datasets: [
-//     {
-//       label: '%',
-//       data: [13, 8, 3],
-//       backgroundColor: [
-//         'rgba(75, 192, 192)',
-//         'rgba(255, 99, 132)',
-//         'rgba(54, 162, 235)',
-//       ],
-//       borderColor: [
-//         'rgba(75, 192, 192)',
-//         'rgba(255, 99, 132)',
-//         'rgba(54, 162, 235, 1)',
-//       ],
-//       borderWidth: 1,
-//       borderRadius: 30,
-//       spacing: 10,
-//       cutout: 130,
-//     },
-//   ],
-// };
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -49,7 +25,7 @@ const HomePage = () => {
     labels: ['Saving', 'Expense', 'Investment'],
     datasets: [
       {
-        label: '$',
+        label: '',
         data: [],
         backgroundColor: [],
         borderColor: [],
