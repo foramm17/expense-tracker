@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_TRANSACTION } from '../graphql/queries/transaction.query.js';
+import {
+  GET_TRANSACTION,
+  GET_TRANSACTION_STATISTICS,
+} from '../graphql/queries/transaction.query.js';
 import { UPDATE_TRANSACTION } from '../graphql/mutations/transaction.mutation.js';
 import toast from 'react-hot-toast';
 import TransactionFormFields from '../components/forms/TransactionFormFields.jsx';
@@ -17,7 +20,7 @@ const TransactionPage = () => {
   const [updateTransaction, { loading: loadingUpdate }] = useMutation(
     UPDATE_TRANSACTION,
     {
-      refetchQueries: ['GetTransaction', 'GetTransactionStatistics'],
+      refetchQueries: [{ query: GET_TRANSACTION_STATISTICS }],
     }
   );
 
